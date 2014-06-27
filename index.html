@@ -1,1 +1,44 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en" ng-app="mainModule">
+
+	<head>
+
+	<title>Vova Iatsyk</title>
+
+    <meta charset="utf8" />
+    <meta property="og:site_name" content="Vova Iatsyk" />
+    <meta name="keywords" content="Vova Iatsyk" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="http://s.gravatar.com/avatar/57b67f60b14f6cb5a1706ee189482abd?s=16.gif" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css" media="all" />
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+	</head>
+
+	<body>
+
+		<div id="main">
+
+			<div id="avatar"></div>
+
+			<main-directive></main-directive>
+
+	
+			<script type="text/javascript">
+				var av = document.getElementById('avatar');
+					av.onclick = function () {
+						if (av.className == 'tapped') 
+							av.className = '';
+						else 
+							av.className = 'tapped';
+					};
+			</script>
+
+		</div>
+
+	</body>
+</html>
+
