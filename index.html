@@ -1,44 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="mainModule">
-
-	<head>
-
-	<title>Vova Iatsyk</title>
-
-    <meta charset="utf8" />
-    <meta property="og:site_name" content="Vova Iatsyk" />
-    <meta name="keywords" content="Vova Iatsyk" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="Shortcut Icon" type="image/x-icon" href="http://s.gravatar.com/avatar/57b67f60b14f6cb5a1706ee189482abd?s=16.gif" />
-    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/style.css" media="all" />
+<html ng-app="OSL">
+<title>One short life</title>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <script type="text/javascript" src="lib/angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/hour.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
 
-	</head>
+<body ng-controller="MainController as main">
 
-	<body>
+<header>
+    <h1 class="text-center">One Short Life</h1>
+    <h4 class="text-center">Run away from reality</h4>
+</header>
 
-		<div id="main">
+<div class="text-center">
+	<h3 id="hour">hour:  {{main.hour}}</h3>
+	<button id="clickBtn">Click</button>
+</div>
 
-			<div id="avatar"></div>
+<script type="text/javascript" src="js/some.js"></script>
+<script type="text/javascript">
+</script>
 
-			<main-directive></main-directive>
-
-	
-			<script type="text/javascript">
-				var av = document.getElementById('avatar');
-					av.onclick = function () {
-						if (av.className == 'tapped') 
-							av.className = '';
-						else 
-							av.className = 'tapped';
-					};
-			</script>
-
-		</div>
-
-	</body>
+</body>
 </html>
-
