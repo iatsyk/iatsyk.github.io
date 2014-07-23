@@ -8,7 +8,7 @@ $("#clickBtn").on("click", function () {
 	hour++;
 	delete_cookie("hour");
 	document.cookie = "hour=" + hour + ";expires=15/08/2014 00:00:00";
-	var message = $("<h3 id=\"hour\">hour:  " + hour + "</h3>");
+	var message = "hour:  " + hour;
     	$("#hour").text(message);
 	});
 });
