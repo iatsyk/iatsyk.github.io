@@ -1,4 +1,5 @@
-osl.github.io
+One short life
 ================
 
-OSL game http://osl.github.io
+OSL game
+http://osl.github.io
