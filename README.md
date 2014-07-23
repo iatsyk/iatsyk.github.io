@@ -1,4 +1,4 @@
-iatsyk.github.io
+osl.github.io
 ================
 
-My personal site http://iatsyk.github.io
+OSL game http://osl.github.io
