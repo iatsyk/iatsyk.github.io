@@ -3,29 +3,11 @@
 <title>One short life</title>
 <head>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <script type="text/javascript" src="lib/angular.min.js"></script>
     <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/hour.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
-    <style>
-
-        ul {
-            margin: 0;
-            padding: 4px;
-        }
-
-        li.fir {
-            background-color: red;
-        }
-
-        li.sec {
-            background-color: yellow;
-        }
-
-        li.thir {
-            background-color: blue;
-        }
-    </style>
 </head>
 
 <body ng-controller="MainController as main">
@@ -34,28 +16,35 @@
     <h1 class="text-center">One Short Life</h1>
     <h4 class="text-center">Run away from reality</h4>
 </header>
-<ul>
-    <li class="fir text-left">
-        <div>
-            <p>p1.1</p>
-        </div>
-        <div>
-            <p>p1.2</p>
-        </div>
-    </li>
-    <li class="sec text-center">
-        <h3 id="hour">hour: {{main.hour}}</h3>
-        <button id="clickBtn">Click</button>
-    </li>
-    <li class="thir text-right">
-        <div>
-            <p>p3.1</p>
-        </div>
-        <div>
-            <p>p3.2</p>
-        </div>
-    </li>
-</ul>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                <div id="myleft">
+                    <div>
+                        <p>p1.1</p>
+                    </div>
+                    <div>
+                        <p>p1.2</p>
+                    </div>
+                </div>
+                <div id="mycontent">
+                    <h3 id="hour">hour: {{main.hour}}</h3>
+                    <button id="clickBtn">Click</button>
+                </div>
+                <div id="myright">
+                    <div>
+                        <p>p3.1</p>
+                    </div>
+                    <div>
+                        <p>p3.2</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
 
 <script type="text/javascript" src="js/some.js"></script>
 <script type="text/javascript">
