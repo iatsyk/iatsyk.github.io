@@ -25,8 +25,24 @@ p {
     padding: 0px;
 }
 
-#half {
+#half11 {
     height: 50%;
+    background: green;
+}
+
+#half12 {
+    height: 50%;
+    background: black;
+}
+
+#half31 {
+    height: 50%;
+    background: blue;
+}
+
+#half32 {
+    height: 50%;
+    background: yellow;
 }
 
 td {
