@@ -1,13 +1,17 @@
-function get_cookie(cookie_name) {
-    var results = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
-    if (results)
-        return ( unescape(results[2]) );
-    else
-        return null;
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+    }
+    return "";
 }
 
-function delete_cookie(cookie_name) {
-    var cookie_date = new Date();
-    cookie_date.setTime(cookie_date.getTime() - 1);
-    document.cookie = cookie_name += "=; expires=" + cookie_date.toGMTString();
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toGMTString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
 }

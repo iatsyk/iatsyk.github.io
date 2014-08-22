@@ -4,10 +4,9 @@ $(document).ready(function () {
 
     $("#clickBtn").on("click", function () {
         console.log("in add");
-        var hour = get_cookie("hour");
+        var hour = getCookie("hour");
         hour ++;
-        delete_cookie("hour");
-        document.cookie = "hour=" + hour + ";expires=15/10/2014 00:00:00";
+        setCookie("hour", hour, 60);
         var message = "hour:  " + hour;
         $("#hour").text(message);
     });
@@ -15,9 +14,9 @@ $(document).ready(function () {
 
 function setHourOnLoadPage() {
     console.log("in setHourOnLoadPage");
-    var hour = get_cookie("hour");
+    var hour = getCookie("hour");
     if (hour == null) {
-        document.cookie = "hour=0;expires=15/10/2014 00:00:00";
+        setCookie("hour", 0, 60);
         hour = 0;
     }
     var message = "hour:  " + hour;
