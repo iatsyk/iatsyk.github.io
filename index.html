@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="OSL">
+<html>
 <title>One short life</title>
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script type="text/javascript" src="lib/angular.min.js"></script>
     <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/hour.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
 </head>
 
-<body ng-controller="MainController as main">
+<body>
 <header>
     <p class="text-center">One Short Life</p>
 
@@ -33,7 +31,7 @@
             </div>
         </td>
         <td id="mycontent" class="text-center">
-            <h3 id="hour">hour: {{main.hour}}</h3>
+            <h3 id="hour"></h3>
             <button id="clickBtn">Click</button>
         </td>
         <td id="myright">
