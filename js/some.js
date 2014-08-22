@@ -15,9 +15,9 @@ $(document).ready(function () {
 function setHourOnLoadPage() {
     console.log("in setHourOnLoadPage");
     var hour = getCookie("hour");
-    if (hour == null) {
+    if (hour == null || hour == "") {
         setCookie("hour", 0, 60);
-        hour = 0;
+        hour = "0";
     }
     var message = "hour:  " + hour;
     $("#hour").text(message);
