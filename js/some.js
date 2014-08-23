@@ -4,7 +4,7 @@ $(document).ready(function () {
     setInterval(function () {
         var hour = incHour();
         updateHour(hour);
-    }, 1000)
+    }, 1000);
 
 
     $("#clickBtn").on("click", function () {
