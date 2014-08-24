@@ -43,34 +43,3 @@ function incDate(delta) {
     setCookie("date", date, 60);
     return date;
 }
-
-function setDateOnLoadPage() {
-    var date = getCookie("date");
-    if (date == null || date == "") {
-        setCookie("date", 0, 60);
-        date = "0";
-    }
-    $("#currentData").text(parseDateToString(date));
-}
-
-function parseDateToString(date) {
-    var result = "";
-    if (date / 525600 >= 1) {
-        result = "Y: " + parseInt(date / 525600) + ", ";
-        date = date % 525600;
-    }
-    if (date / 43200 >= 1 || result != "") {
-        result = result + "M: " + parseInt(date / 43200) + ", ";
-        date = date % 43200;
-    }
-    result = result + "D: " + parseInt(date / 1440) + ", ";
-    date = date % 1440;
-    result = result + "H: " + parseInt(date / 60) + ", ";
-    date = date % 60;
-    result = result + "M: " + date;
-    return result;
-}
-
-function updateExp(){
-    $("#heroExp").text(parseDateToString(date));
-}

@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-    setDateOnLoadPage();
+    CurrentDate.load();
+    Hero.load();
 
     setInterval(function () {
         var date = incDate(5);
@@ -8,8 +9,10 @@ $(document).ready(function () {
         Hero.exp++;
         if (Hero.exp >= Hero.level * Hero.multiplier) {
             Hero.level++;
+            Hero.exp = 0;
         }
         Hero.updatePage();
+        Hero.save();
     }, 2083);
 
     $("#clickMin").on("click", function () {
