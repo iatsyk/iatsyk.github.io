@@ -18,6 +18,7 @@ function setCookie(cname, cvalue, exdays) {
 
 function updateDate(date) {
     $("#currentData").text(parseDateToString(date));
+    updateDayPeriod(date);
 }
 
 function updateDayPeriod(date) {
@@ -36,7 +37,7 @@ function updateDayPeriod(date) {
 function incDate(delta) {
     var date = getCookie("date");
     if (delta == undefined) {
-        delta = 5;
+        delta = 1;
     }
     date = parseInt(date) + delta;
     setCookie("date", date, 60);
@@ -68,4 +69,8 @@ function parseDateToString(date) {
     date = date % 60;
     result = result + "M: " + date;
     return result;
+}
+
+function updateExp(){
+    $("#heroExp").text(parseDateToString(date));
 }

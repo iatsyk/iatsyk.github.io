@@ -3,27 +3,28 @@ $(document).ready(function () {
     setDateOnLoadPage();
 
     setInterval(function () {
-        var date = incDate();
+        var date = incDate(5);
         updateDate(date);
-        updateDayPeriod(date);
+        Hero.exp++;
+        if (Hero.exp >= Hero.level * Hero.multiplier) {
+            Hero.level++;
+        }
+        Hero.updatePage();
     }, 2083);
 
     $("#clickMin").on("click", function () {
-        var date = incDate();
+        var date = incDate(5);
         updateDate(date);
-        updateDayPeriod(date);
     });
 
     $("#clickHour").on("click", function () {
         var date = incDate(60 * 5);
         updateDate(date);
-        updateDayPeriod(date);
     });
 
     $("#clearBtn").on("click", function () {
         setCookie("date", 0, 60);
         updateDate(0);
-        updateDayPeriod(date);
     });
 
     $("#skipNightBtn").on("click", function () {
@@ -37,7 +38,6 @@ $(document).ready(function () {
         }
         if (newDate != undefined) {
             updateDate(newDate);
-            updateDayPeriod(newDate);
         }
     });
 
