@@ -39,8 +39,21 @@ var CurrentDate = {
         $("#currentDayPeriod").text(CurrentDate.dayPeriod);
     },
     toString: function () {
-        return "Y: " + CurrentDate.year + ", M: " + CurrentDate.month + ", d: " + CurrentDate.day +
-            ", h: " + CurrentDate.hour + ", m: " + CurrentDate.minute;
+        var result = "";
+        if (CurrentDate.year != 0) {
+            result = result + "Y: " + CurrentDate.year + ", ";
+        }
+        if (CurrentDate.month != 0 || result != "") {
+            result = result + "M: " + CurrentDate.month + ", ";
+        }
+        if (CurrentDate.day != 0 || result != "") {
+            result = result + "d: " + CurrentDate.day + ", ";
+        }
+        if (CurrentDate.hour != 0 || result != "") {
+            result = result + "h: " + CurrentDate.hour + ", ";
+        }
+        result = result + "m: " + CurrentDate.minute;
+        return   result;
     },
     incYear: function (value) {
         if (value == undefined) {
