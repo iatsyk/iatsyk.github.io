@@ -24,6 +24,11 @@ $(document).ready(function () {
         CurrentDate.load();
     });
 
+    $("#saveAll").on("click", function () {
+        CurrentDate.save();
+        Hero.save();
+    });
+
     $("#clickExp").on("click", function () {
         Hero.incExp(10);
     });
