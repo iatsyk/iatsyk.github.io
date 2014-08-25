@@ -4,44 +4,45 @@ $(document).ready(function () {
     Hero.load();
 
     setInterval(function () {
-        var date = incDate(5);
-        updateDate(date);
-        Hero.exp++;
+        CurrentDate.incMinute(5);
+        Hero.incExp(1);
         if (Hero.exp >= Hero.level * Hero.multiplier) {
             Hero.level++;
             Hero.exp = 0;
         }
-        Hero.updatePage();
         Hero.save();
+        CurrentDate.save();
     }, 2083);
 
     $("#clickMin").on("click", function () {
-        var date = incDate(5);
-        updateDate(date);
+        CurrentDate.incMinute(5);
     });
 
     $("#clickHour").on("click", function () {
-        var date = incDate(60 * 5);
-        updateDate(date);
+        CurrentDate.incHour(5);
     });
 
-    $("#clearBtn").on("click", function () {
+    $("#clearDate").on("click", function () {
         setCookie("date", 0, 60);
-        updateDate(0);
+        CurrentDate.load();
+    })
+
+    $("#clickExp").on("click", function () {
+        Hero.incExp(10);
+    });
+
+    $("#clickLvl").on("click", function () {
+        Hero.incLevel();
+    });
+
+    $("#clearHero").on("click", function () {
+        setCookie("heroLevel", 1, 60);
+        setCookie("heroExp", 1, 60);
+        Hero.load();
     });
 
     $("#skipNightBtn").on("click", function () {
-        var date = getCookie("date");
-        var newDate;
-        date = date % 1440;
-        if (date / 60 >= 21) {
-            newDate = incDate(1440 - date + 5 * 60);
-        } else if (date / 60 < 5) {
-            newDate = incDate(5 * 60 - date);
-        }
-        if (newDate != undefined) {
-            updateDate(newDate);
-        }
+        CurrentDate.skipNight();
     });
 
 });

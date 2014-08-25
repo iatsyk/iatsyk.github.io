@@ -15,31 +15,3 @@ function setCookie(cname, cvalue, exdays) {
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
 }
-
-function updateDate(date) {
-    $("#currentData").text(parseDateToString(date));
-    updateDayPeriod(date);
-}
-
-function updateDayPeriod(date) {
-    date = (date % 1440) / 60;
-    if (date >= 21 || date <= 5) {
-        $("#currentDayPeriod").text("Night");
-    } else if (date > 5 && date <= 7) {
-        $("#currentDayPeriod").text("The light is burning");
-    } else if (date > 7 && date <= 19) {
-        $("#currentDayPeriod").text("Day");
-    } else if (date > 19 && date < 21) {
-        $("#currentDayPeriod").text("The Night is coming");
-    }
-}
-
-function incDate(delta) {
-    var date = getCookie("date");
-    if (delta == undefined) {
-        delta = 1;
-    }
-    date = parseInt(date) + delta;
-    setCookie("date", date, 60);
-    return date;
-}

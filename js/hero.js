@@ -20,6 +20,23 @@ var Hero = {
     updatePage: function () {
         $("#heroLvl").text("Level: " + Hero.level);
         $("#heroExp").text("Exp: " + Hero.exp + " / " + Hero.level * Hero.multiplier);
+    },
+    incExp: function (value) {
+        if (value == undefined) {
+            value = 1;
+        }
+        Hero.exp = parseInt(Hero.exp) + parseInt(value);
+        if (Hero.exp >= Hero.level * Hero.multiplier) {
+            Hero.incLevel();
+            Hero.exp = 0;
+        }
+        Hero.updatePage();
+    },
+    incLevel: function (value) {
+        if (value == undefined) {
+            value = 1;
+        }
+        Hero.level = parseInt(Hero.level) + parseInt(value);
+        Hero.updatePage();
     }
-
 };
