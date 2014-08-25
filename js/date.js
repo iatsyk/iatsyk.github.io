@@ -3,7 +3,7 @@ var CurrentDate = {
     month: 0,
     day: 0,
     hour: 0,
-    monthminute: 0,
+    minute: 0,
     dayPeriod: "Day",
     save: function () {
         var date = CurrentDate.year * 525600 + CurrentDate.month * 43200 +
