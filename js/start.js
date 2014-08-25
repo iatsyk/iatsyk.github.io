@@ -5,11 +5,8 @@ $(document).ready(function () {
 
     setInterval(function () {
         CurrentDate.incMinute(5);
-        Hero.incExp(1);
-        if (Hero.exp >= Hero.level * Hero.multiplier) {
-            Hero.level++;
-            Hero.exp = 0;
-        }
+        Hero.incExp();
+
         Hero.save();
         CurrentDate.save();
     }, 2083);
@@ -25,7 +22,7 @@ $(document).ready(function () {
     $("#clearDate").on("click", function () {
         setCookie("date", 0, 60);
         CurrentDate.load();
-    })
+    });
 
     $("#clickExp").on("click", function () {
         Hero.incExp(10);

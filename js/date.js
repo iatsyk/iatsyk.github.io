@@ -107,7 +107,6 @@ var CurrentDate = {
         CurrentDate.updatePage();
     },
     skipNight: function () {
-        var newDate;
         if (CurrentDate.hour >= 21) {
             CurrentDate.minute = 0;
             CurrentDate.hour = 5;
