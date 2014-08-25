@@ -2,6 +2,8 @@ var Hero = {
     level: 1,
     exp: 0,
     multiplier: 100,
+    name: "",
+    age: 14,
     save: function () {
         setCookie("heroLevel", Hero.level, 60);
         setCookie("heroExp", Hero.exp, 60);
