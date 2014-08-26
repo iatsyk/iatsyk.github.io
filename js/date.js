@@ -56,7 +56,18 @@ var CurrentDate = {
 //        return   result;
 //    },
     toString: function () {
-        return "Time is " + CurrentDate.hour + ":" + CurrentDate.minute
+        var result = "";
+        if (CurrentDate.hour < 10) {
+            result += "Time is 0" + CurrentDate.hour;
+        } else {
+            result += "Time is " + CurrentDate.hour;
+        }
+        if (CurrentDate.minute < 10) {
+            result += ":0" + CurrentDate.minute;
+        } else {
+            result += ":" + CurrentDate.minute;
+        }
+        return result;
     },
     incYear: function (value) {
         if (value == undefined) {

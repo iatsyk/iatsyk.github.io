@@ -19,8 +19,13 @@ $(document).ready(function () {
     });
 
     $("#clearDate").on("click", function () {
-        setCookie("date", 0, 60);
-        CurrentDate.load();
+        $.get(
+            "http://www.rinkworks.com/namegen/fnames.cgi",
+            {paramOne : 1, paramX : 'abc'},
+            function(data) {
+                alert('page content: ' + data);
+            }
+        );
     });
 
     $("#saveAll").on("click", function () {
