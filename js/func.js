@@ -15,3 +15,15 @@ function setCookie(cname, cvalue, exdays) {
     var expires = "expires=" + d.toGMTString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
 }
+
+function saveAll() {
+    Hero.save();
+    CurrentDate.save();
+    Resource.save();
+}
+
+function loadAll() {
+    CurrentDate.load();
+    Hero.load();
+    Resource.load();
+}

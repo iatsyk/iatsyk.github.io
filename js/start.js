@@ -1,17 +1,13 @@
 $(document).ready(function () {
 
-    CurrentDate.load();
-    Hero.load();
-    Resource.load();
+    loadAll();
 
     setInterval(function () {
         CurrentDate.incMinute(5);
         Hero.incExp();
         Resource.incCoins();
 
-        Hero.save();
-        CurrentDate.save();
-        Resource.save();
+        saveAll();
     }, 2083);
 
     $("#clickMin").on("click", function () {
@@ -28,8 +24,11 @@ $(document).ready(function () {
     });
 
     $("#saveAll").on("click", function () {
-        CurrentDate.save();
-        Hero.save();
+        saveAll();
+    });
+
+    $("#loadAll").on("click", function () {
+        loadAll();
     });
 
     $("#clickExp").on("click", function () {

@@ -38,22 +38,25 @@ var CurrentDate = {
         }
         $("#currentDayPeriod").text(CurrentDate.dayPeriod);
     },
+//    toString: function () {
+//        var result = "";
+//        if (CurrentDate.year != 0) {
+//            result = result + "Y: " + CurrentDate.year + ", ";
+//        }
+//        if (CurrentDate.month != 0 || result != "") {
+//            result = result + "M: " + CurrentDate.month + ", ";
+//        }
+//        if (CurrentDate.day != 0 || result != "") {
+//            result = result + "d: " + CurrentDate.day + ", ";
+//        }
+//        if (CurrentDate.hour != 0 || result != "") {
+//            result = result + "h: " + CurrentDate.hour + ", ";
+//        }
+//        result = result + "m: " + CurrentDate.minute;
+//        return   result;
+//    },
     toString: function () {
-        var result = "";
-        if (CurrentDate.year != 0) {
-            result = result + "Y: " + CurrentDate.year + ", ";
-        }
-        if (CurrentDate.month != 0 || result != "") {
-            result = result + "M: " + CurrentDate.month + ", ";
-        }
-        if (CurrentDate.day != 0 || result != "") {
-            result = result + "d: " + CurrentDate.day + ", ";
-        }
-        if (CurrentDate.hour != 0 || result != "") {
-            result = result + "h: " + CurrentDate.hour + ", ";
-        }
-        result = result + "m: " + CurrentDate.minute;
-        return   result;
+        return "Time is " + CurrentDate.hour + ":" + CurrentDate.minute
     },
     incYear: function (value) {
         if (value == undefined) {
@@ -61,6 +64,7 @@ var CurrentDate = {
         }
         CurrentDate.year += parseInt(value);
         CurrentDate.updatePage();
+        Hero.age.load();
     },
     incMonth: function (value) {
         if (value == undefined) {
@@ -72,6 +76,7 @@ var CurrentDate = {
             CurrentDate.month = CurrentDate.month % 12;
         }
         CurrentDate.updatePage();
+        Hero.age.load();
     },
     incDay: function (value) {
         if (value == undefined) {
@@ -83,6 +88,7 @@ var CurrentDate = {
             CurrentDate.day = CurrentDate.day % 30;
         }
         CurrentDate.updatePage();
+        Hero.age.load();
     },
     incHour: function (value) {
         if (value == undefined) {
