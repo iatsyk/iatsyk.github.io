@@ -21,11 +21,15 @@ $(document).ready(function () {
     $("#clearDate").on("click", function () {
         $.get(
             "http://www.rinkworks.com/namegen/fnames.cgi",
-            {paramOne : 1, paramX : 'abc'},
-            function(data) {
-                alert('page content: ' + data);
+            {},
+            function(answer) {
+                alert("We have answer");
             }
         );
+        aClient = new HttpClient();
+        aClient.get('http://www.rinkworks.com/namegen/fnames.cgi', function (answer) {
+            alert("We have answer");
+        });
     });
 
     $("#saveAll").on("click", function () {
