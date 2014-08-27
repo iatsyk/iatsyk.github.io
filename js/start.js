@@ -19,17 +19,19 @@ $(document).ready(function () {
     });
 
     $("#clearDate").on("click", function () {
-        $.get(
-            "http://www.rinkworks.com/namegen/fnames.cgi",
-            {},
-            function(answer) {
-                alert("We have answer");
-            }
-        );
-        aClient = new HttpClient();
-        aClient.get('http://www.rinkworks.com/namegen/fnames.cgi', function (answer) {
-            alert("We have answer");
-        });
+        var xhr = createCORSRequest('GET', "http://www.rinkworks.com/namegen/fnames.cgi");
+        if (!xhr) {
+            throw new Error('CORS not supported');
+        }
+        xhr.onload = function () {
+            var responseText = xhr.responseText;
+            console.log(responseText);
+
+        };
+        xhr.onerror = function () {
+            console.log('There was an error!');
+        };
+        xhr.send();
     });
 
     $("#saveAll").on("click", function () {
