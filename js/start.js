@@ -53,6 +53,7 @@ $(document).ready(function () {
     $("#clearHero").on("click", function () {
         setCookie("heroLevel", 1, 60);
         setCookie("heroExp", 1, 60);
+        setCookie("heroName", "", 60);
         Hero.load();
     });
 
