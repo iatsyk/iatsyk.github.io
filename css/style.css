@@ -9,9 +9,8 @@ header {
     margin: 0;
     padding: 0;
     background: red;
-    font-size: 80%;
+    font-size: 100%;
     color: black;
-    font-family: Arial, sans-serif;
 }
 
 p, span, div {

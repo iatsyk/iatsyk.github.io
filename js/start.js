@@ -18,22 +18,6 @@ $(document).ready(function () {
         CurrentDate.incHour(5);
     });
 
-    $("#clearDate").on("click", function () {
-        var xhr = createCORSRequest('GET', "http://www.rinkworks.com/namegen/fnames.cgi");
-        if (!xhr) {
-            throw new Error('CORS not supported');
-        }
-        xhr.onload = function () {
-            var responseText = xhr.responseText;
-            console.log(responseText);
-
-        };
-        xhr.onerror = function () {
-            console.log('There was an error!');
-        };
-        xhr.send();
-    });
-
     $("#saveAll").on("click", function () {
         saveAll();
     });
@@ -50,7 +34,25 @@ $(document).ready(function () {
         Hero.incLevel();
     });
 
-    $("#clearHero").on("click", function () {
+    $("#btn1").on("click", function () {
+        $(this).text("GetHttpRequest");
+        var xhr = createCORSRequest('GET', "http://www.rinkworks.com/namegen/fnames.cgi");
+        if (!xhr) {
+            throw new Error('CORS not supported');
+        }
+        xhr.onload = function () {
+            var responseText = xhr.responseText;
+            console.log(responseText);
+
+        };
+        xhr.onerror = function () {
+            console.log('There was an error!');
+        };
+        xhr.send();
+    });
+
+    $("#btn2").on("click", function () {
+        $(this).text("ClearHero");
         setCookie("heroLevel", 1, 60);
         setCookie("heroExp", 1, 60);
         setCookie("heroName", "", 60);
