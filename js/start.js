@@ -3,12 +3,15 @@ $(document).ready(function () {
     loadAll();
 
     setInterval(function () {
-        CurrentDate.incMinute(5);
-        Hero.incExp();
-        Resource.incCoins();
+        Hero.incExp(1);
+        Resource.incCoins(1);
 
         saveAll();
-    }, 2083);
+    }, CONST.fiveMinute);
+
+    setInterval(function () {
+        CurrentDate.incMinute(1);
+    }, CONST.fiveMinute / 5);
 
     $("#clickMin").on("click", function () {
         CurrentDate.incMinute(5);
