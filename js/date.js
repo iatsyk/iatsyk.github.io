@@ -38,23 +38,6 @@ var CurrentDate = {
         }
         $("#currentDayPeriod").text(CurrentDate.dayPeriod);
     },
-//    toString: function () {
-//        var result = "";
-//        if (CurrentDate.year != 0) {
-//            result = result + "Y: " + CurrentDate.year + ", ";
-//        }
-//        if (CurrentDate.month != 0 || result != "") {
-//            result = result + "M: " + CurrentDate.month + ", ";
-//        }
-//        if (CurrentDate.day != 0 || result != "") {
-//            result = result + "d: " + CurrentDate.day + ", ";
-//        }
-//        if (CurrentDate.hour != 0 || result != "") {
-//            result = result + "h: " + CurrentDate.hour + ", ";
-//        }
-//        result = result + "m: " + CurrentDate.minute;
-//        return   result;
-//    },
     toString: function () {
         var result = "";
         if (CurrentDate.hour < 10) {
