@@ -19,13 +19,13 @@ function setCookie(cname, cvalue, exdays) {
 function saveAll() {
     Hero.save();
     CurrentDate.save();
-    Resource.save();
+    Resource.coins.save();
 }
 
 function loadAll() {
     CurrentDate.load();
     Hero.load();
-    Resource.load();
+    Resource.coins.load();
 }
 
 function createCORSRequest(method, url) {

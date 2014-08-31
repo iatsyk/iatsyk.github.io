@@ -24,7 +24,6 @@ var Hero = {
         setCookie("heroLevel", Hero.level, 60);
         setCookie("heroExp", Hero.exp, 60);
         setCookie("heroName", Hero.name, 60);
-        setCookie("heroAge", Hero.age, 60);
     },
     load: function () {
         var level = getCookie("heroLevel");

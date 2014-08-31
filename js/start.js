@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
     loadAll();
+    Events.parseAllEvents();
 
     setInterval(function () {
         Hero.incExp(1);
-        Resource.incCoins(1);
 
         saveAll();
     }, CONST.fiveMinute);
@@ -55,11 +55,8 @@ $(document).ready(function () {
     });
 
     $("#btn2").on("click", function () {
-        $(this).text("ClearHero");
-        setCookie("heroLevel", 1, 60);
-        setCookie("heroExp", 1, 60);
-        setCookie("heroName", "", 60);
-        Hero.load();
+        $(this).text("+1 Coins");
+        Resource.coins.inc();
     });
 
     $("#skipNightBtn").on("click", function () {
