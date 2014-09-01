@@ -24,7 +24,10 @@ var Resource = {
             for (var key in this.eventsList) {
                 var event = this.eventsList[key];
                 if (event.hasOwnProperty("cause") && event.cause.value == this.value) {
-                    alert(event.description);
+                    $("#eventsDesc").text(event.description);
+                    setTimeout(function () {
+                        $("#eventsDesc").text("");
+                    }, event.priority * 1000)
                 }
             }
         }

@@ -7,11 +7,11 @@ $(document).ready(function () {
         Hero.incExp(1);
 
         saveAll();
-    }, CONST.fiveMinute);
+    }, Constants.fiveMinute);
 
     setInterval(function () {
         CurrentDate.incMinute(1);
-    }, CONST.fiveMinute / 5);
+    }, Constants.fiveMinute / 5);
 
     $("#clickMin").on("click", function () {
         CurrentDate.incMinute(5);
@@ -38,20 +38,9 @@ $(document).ready(function () {
     });
 
     $("#btn1").on("click", function () {
-        $(this).text("GetHttpRequest");
-        var xhr = createCORSRequest('GET', "http://www.rinkworks.com/namegen/fnames.cgi");
-        if (!xhr) {
-            throw new Error('CORS not supported');
-        }
-        xhr.onload = function () {
-            var responseText = xhr.responseText;
-            console.log(responseText);
-
-        };
-        xhr.onerror = function () {
-            console.log('There was an error!');
-        };
-        xhr.send();
+        $(this).text("ClearCoins");
+        setCookie("resourceCoins", 0, 60);
+        Resource.coins.load();
     });
 
     $("#btn2").on("click", function () {
