@@ -24,9 +24,16 @@ var Resource = {
             for (var key in this.eventsList) {
                 var event = this.eventsList[key];
                 if (event.hasOwnProperty("cause") && event.cause.value == this.value) {
-                    $("#eventsDesc").text(event.description);
+                    var eventsElem =$("#events");
+                    eventsElem.empty().append('<p id="eventsDesc">' + event.description + '</p>');
+                    if (event.hasOwnProperty("buttons")) {
+                        for (var buttKey in event.buttons) {
+                            var button = event.buttons[buttKey];
+                            eventsElem.append('<button id="' + key + '">' + button.text + '</button>');
+                        }
+                    }
                     setTimeout(function () {
-                        $("#eventsDesc").text("");
+                        $("#events").empty();
                     }, event.priority * 1000)
                 }
             }

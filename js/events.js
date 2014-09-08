@@ -6,7 +6,23 @@ var Events = {
             type: "coins",
             value: 10
         },
-        priority: Constants.Priority.normal
+        priority: Constants.Priority.lowest,
+        buttons: {
+            button1: {
+                text: "Take",
+                onClick: {
+                    type: Constants.ButtonClickType.AddResource,
+                    resource: "coins",
+                    value: 10
+                }
+            },
+            button2: {
+                text: "Leave",
+                onClick: {
+                    type: Constants.ButtonClickType.Close
+                }
+            }
+        }
     },
     youHave15Coins: {
         eventType: Constants.EventType.ResourceDependent,
@@ -30,7 +46,7 @@ var Events = {
         eventType: Constants.EventType.Permanent,
         description: "10 percent chance to saw this event",
         cause: {
-            type: "always",
+            type: "always",//replace with enum
             value: -1
         },
         priority: Constants.Priority.normal
@@ -38,7 +54,7 @@ var Events = {
     parseAllEvents: function () {
         for (var key in Events) {
             var value = Events[key];
-            switch(value.eventType) {
+            switch (value.eventType) {
                 case Constants.EventType.ResourceDependent:
                     if (value.hasOwnProperty("cause")) {
                         for (var k in Resource) {

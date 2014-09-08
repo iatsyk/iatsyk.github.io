@@ -15,5 +15,14 @@ var Constants = {
             1: {name: "ResourceDependent"},
             2: {name: "Permanent"}
         }
+    },
+    ButtonClickType: {
+        Close: 1,
+        AddResource: 2,
+        properties: {
+            1: {name: "Close"},
+            2: {name: "AddResource"}
+        }
+
     }
 };
