@@ -24,12 +24,33 @@ var Resource = {
             for (var key in this.eventsList) {
                 var event = this.eventsList[key];
                 if (event.hasOwnProperty("cause") && event.cause.value == this.value) {
-                    var eventsElem =$("#events");
-                    eventsElem.empty().append('<p id="eventsDesc">' + event.description + '</p>');
+                    var eventsElement = $("#events");
+                    eventsElement.empty().append('<p id="eventsDesc">' + event.description + '</p>');
                     if (event.hasOwnProperty("buttons")) {
                         for (var buttKey in event.buttons) {
                             var button = event.buttons[buttKey];
-                            eventsElem.append('<button id="' + key + '">' + button.text + '</button>');
+                            var buttonElement = $('#' + buttKey);
+                            eventsElement.append('<button id="' + buttKey + '">' + button.text + '</button>');
+                            switch (button.onClick.type) {
+                                case Constants.ButtonClickType.Close:
+                                    $('#' + buttKey).on("click", function () {
+                                        $("#events").empty();
+                                    });
+                                    break;
+                                case Constants.ButtonClickType.AddResource:
+                                    $('#' + buttKey).on("click", button.onClick, function (event) {
+                                        var onClick = event.data;
+                                        for (var k in Resource) {
+                                            if (k == onClick.resource) {
+                                                Resource[k].inc(onClick.value);
+                                            }
+                                        }
+                                        if (onClick.withClose) {
+                                            $("#events").empty();
+                                        }
+                                    });
+                                    break;
+                            }
                         }
                     }
                     setTimeout(function () {

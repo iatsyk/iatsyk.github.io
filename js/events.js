@@ -1,19 +1,20 @@
 var Events = {
     find10goldsOnRoad: {
         eventType: Constants.EventType.ResourceDependent,
-        description: "While you walking you find 10 coins",
+        description: "You find 10 coins",
         cause: {
             type: "coins",
             value: 10
         },
-        priority: Constants.Priority.lowest,
+        priority: Constants.Priority.normal,
         buttons: {
             button1: {
                 text: "Take",
                 onClick: {
                     type: Constants.ButtonClickType.AddResource,
                     resource: "coins",
-                    value: 10
+                    value: 10,
+                    withClose: true
                 }
             },
             button2: {
@@ -26,21 +27,29 @@ var Events = {
     },
     youHave15Coins: {
         eventType: Constants.EventType.ResourceDependent,
-        description: "You have 15 coins",
+        description: "You find 10 coins",
         cause: {
             type: "coins",
-            value: 15
+            value: 25
         },
-        priority: Constants.Priority.normal
-    },
-    youHave20Coins: {
-        eventType: Constants.EventType.ResourceDependent,
-        description: "You have 20 coins",
-        cause: {
-            type: "coins",
-            value: 20
-        },
-        priority: Constants.Priority.normal
+        priority: Constants.Priority.normal,
+        buttons: {
+            button1: {
+                text: "Take",
+                onClick: {
+                    type: Constants.ButtonClickType.AddResource,
+                    resource: "coins",
+                    value: 10,
+                    withClose: false
+                }
+            },
+            button2: {
+                text: "Leave",
+                onClick: {
+                    type: Constants.ButtonClickType.Close
+                }
+            }
+        }
     },
     vova: {
         eventType: Constants.EventType.Permanent,
