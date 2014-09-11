@@ -1,5 +1,6 @@
 var Events = {
     find10goldsOnRoad: {
+        id: "find10goldsOnRoad",
         eventType: Constants.EventType.ResourceDependent,
         description: "You find 10 coins",
         cause: {
@@ -26,6 +27,7 @@ var Events = {
         }
     },
     youHave15Coins: {
+        id: "youHave15Coins",
         eventType: Constants.EventType.ResourceDependent,
         description: "You find 10 coins",
         cause: {
