@@ -1,102 +1,59 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>One short life</title>
+<html lang="en" ng-app="mainModule">
+
+  <head>
+    <meta name="description" content="This is a site to follow up for Vova Iatsyk and his activities.">
+    <meta content="http://s.gravatar.com/avatar/57b67f60b14f6cb5a1706ee189482abd?s=128.gif" itemprop="image">
+
+    <title>Vova Iatsyk</title>
+
     <meta charset="UTF-8">
-    <meta name="description" content="Long adventure game with many possibilities">
     <meta name="author" content="Vova Iatsyk">
-    <meta name="keywords" content="osl, text game">
+    <meta name="keywords" content="iatsyk">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    <link rel="Shortcut Icon" type="image/x-icon" href="http://s.gravatar.com/avatar/57b67f60b14f6cb5a1706ee189482abd?s=16.gif" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/style.css" media="all" />
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 
-        ga('create', 'UA-54087961-2', 'auto');
-        ga('require', 'displayfeatures');
-        ga('send', 'pageview');
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    </script>
-</head>
+    ga('create', 'UA-54087961-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
 
-<body>
-<header>
-    <p class="text-center">One Short Life</p>
+  </script>
 
-    <p class="text-center">Run away from reality</p>
-</header>
+  </head>
 
-<table id="table-main">
-    <tr>
-        <td id="myleft">
-            <div id="events">
-            </div>
-            <div id="half12">
-                <p>Place: My Village</p>
+  <body>
 
-                <p id="currentData">Data</p>
+  <div id="main">
 
-                <p id="currentDayPeriod">Day</p>
+	<div id="avatar"></div>
 
-                <p>&nbsp;</p>
+	<main-directive></main-directive>
 
-                <p id="heroName">Name:</p>
+	
+	<script type="text/javascript">
+		var av = document.getElementById('avatar');
+        	av.onclick = function () {
+        		if (av.className == 'tapped') 
+				av.className = '';
+        		else 
+				av.className = 'tapped';
+        	};
+	</script>
 
-                <p id="heroAge">Age:</p>
+  </div>
 
-                <p id="heroLvl">Level: 1</p>
+  </body>
 
-                <p id="heroExp">Experiences</p>
-            </div>
-        </td>
-        <td id="mycontent" class="text-center">
-            <div id="timer">
-                <span id="timeDay">Day</span>
-                <span id="timeNight">Night</span>
-            </div>
-            <div>
-                <h3 id="date"></h3>
-                <button id="clickMin">+5 Min</button>
-                <button id="clickHour">+5 Hour</button>
-                <button id="skipNightBtn">Skip night</button>
-            </div>
-            <div>
-                <button id="saveAll">Save</button>
-                <button id="loadAll">Load</button>
-            </div>
-            <div>
-                <button id="clickExp">+10 Exp</button>
-                <button id="clickLvl">+1 Lvl</button>
-            </div>
-            <div>
-                <button id="btn1">Button1</button>
-                <button id="btn2">Button2</button>
-            </div>
-        </td>
-        <td id="myright">
-            <p id="resourceCoins">Coins</p>
-        </td>
-    </tr>
-</table>
-
-<script type="text/javascript" src="js/constants.js"></script>
-<script type="text/javascript" src="js/func.js"></script>
-<script type="text/javascript" src="js/start.js"></script>
-<script type="text/javascript" src="js/date.js"></script>
-<script type="text/javascript" src="js/resource.js"></script>
-<script type="text/javascript" src="js/hero.js"></script>
-<script type="text/javascript" src="js/events.js"></script>
-
-</body>
 </html>
+

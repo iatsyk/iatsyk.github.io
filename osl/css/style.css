@@ -1,0 +1,78 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0
+}
+
+header {
+    height: 7%;
+    margin: 0;
+    padding: 0;
+    background: red;
+    font-size: 100%;
+    color: black;
+}
+
+p, span, div {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+#table-main {
+    border-collapse: collapse;
+    width: 100%;
+    height: 93%;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+#events {
+    height: 50%;
+    background: blue;
+    color: white;
+}
+
+#half12 {
+    height: 50%;
+    background: yellow;
+}
+
+td {
+    border: 1px solid black;
+}
+
+#myleft {
+    width: 20%;
+}
+
+#mycontent {
+    width: 60%;
+}
+
+#myright {
+    width: 20%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#timer {
+    width: 100%;
+    border: 1px solid black;
+}
+
+#timeDay {
+    width: 75%;
+    background: yellow;
+    display: inline-block;
+}
+
+#timeNight {
+    width: 25%;
+    background: black;
+    color: white;
+    display: inline-block;
+}
