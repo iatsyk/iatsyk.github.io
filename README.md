@@ -1,5 +1,4 @@
-One short life
+Hi all, it's my personal site
 ================
 
-OSL game
 http://iatsyk.github.io
