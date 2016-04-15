@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="mainModule">
 
-  <head>
+<head>
     <meta name="description" content="This is a site to follow up for Vova Iatsyk and his activities.">
     <meta content="http://s.gravatar.com/avatar/57b67f60b14f6cb5a1706ee189482abd?s=128.gif" itemprop="image">
 
@@ -12,48 +12,54 @@
     <meta name="keywords" content="iatsyk">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="Shortcut Icon" type="image/x-icon" href="http://s.gravatar.com/avatar/57b67f60b14f6cb5a1706ee189482abd?s=16.gif" />
-    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="css/style.css" media="all" />
+    <link rel="Shortcut Icon" type="image/x-icon" href="http://s.gravatar.com/avatar/57b67f60b14f6cb5a1706ee189482abd?s=16.gif"/>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,300' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="css/style.css" media="all"/>
     <script type="text/javascript" src="lib/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-54087961-1', 'auto');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
+      ga('create', 'UA-54087961-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
 
-  </script>
+    </script>
 
-  </head>
+</head>
 
-  <body>
+<body>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
 
-  <div id="main">
+    <!-- scripts -->
+    <script src="lib/particles.min.js"></script>
+    <script src="app-particles.js"></script>
 
-	<div id="avatar"></div>
+    <div id="main">
 
-	<main-directive></main-directive>
+    <div id="avatar"></div>
 
-	
-	<script type="text/javascript">
-		var av = document.getElementById('avatar');
-        	av.onclick = function () {
-        		if (av.className == 'tapped') 
-				av.className = '';
-        		else 
-				av.className = 'tapped';
-        	};
-	</script>
+    <main-directive></main-directive>
 
-  </div>
 
-  </body>
+    <script type="text/javascript">
+        var av = document.getElementById('avatar');
+        av.onclick = function () {
+            if (av.className == 'tapped')
+                av.className = '';
+            else
+                av.className = 'tapped';
+        };
+    </script>
+
+</div>
+
+</body>
 
 </html>
 
